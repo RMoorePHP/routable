@@ -1,0 +1,12 @@
+{
+    "name": "rmoore/filterable",
+    "description": "Filter eloquent models based on request params",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Robert Moore",
+            "email": "robert@sliske.uk"
+        }
+    ],
+    "require": {}
+}
