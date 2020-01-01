@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\RMoore\Routable;
 
 use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as DB;

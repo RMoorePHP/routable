@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\RMoore\Routable;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
