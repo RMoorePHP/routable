@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/RMoorePHP/filterable.svg)](https://travis-ci.org/RMoorePHP/filterable)
+[![Build Status](https://travis-ci.org/RMoorePHP/routable.svg)](https://travis-ci.org/RMoorePHP/routable)

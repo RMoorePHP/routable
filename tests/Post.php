@@ -2,13 +2,11 @@
 
 namespace Tests;
 
-use RMoore\Filterable\Filterable;
+use RMoore\Routable\Routable;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
-    use Filterable;
+    use Routable;
 
-    public function filters() {
-        return new PostFilters();
-    }
+    protected $fillable = ['title', 'content'];
 }
