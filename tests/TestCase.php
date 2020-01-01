@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as DB;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
@@ -12,6 +11,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $this->setUpDatabase();
         $this->migrateTables();
     }
+
     private function setUpDatabase()
     {
         $database = new DB();
@@ -19,6 +19,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $database->bootEloquent();
         $database->setAsGlobal();
     }
+
     private function migrateTables()
     {
         DB::schema()->create('posts', function ($table) {
@@ -28,6 +29,4 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             $table->timestamps();
         });
     }
-
 }
-

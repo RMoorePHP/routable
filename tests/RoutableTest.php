@@ -2,19 +2,19 @@
 
 namespace Tests;
 
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
-use Illuminate\Events\Dispatcher;
-use Illuminate\Container\Container;
 use Illuminate\Routing\UrlGenerator;
-use Illuminate\Routing\RouteCollection;
 
-class RoutableTest extends TestCase {
-
+class RoutableTest extends TestCase
+{
     const BASE_URL = 'http://www.foo.com';
 
     /** @test */
-    public function it_can_generate_show_route(){
+    public function it_can_generate_show_route()
+    {
         $router = $this->getRouter();
 
         $router->resource('posts', 'PostController');
@@ -23,8 +23,7 @@ class RoutableTest extends TestCase {
 
         $route = $post->routes()->show();
 
-        $this->assertEquals(sprintf("%s/posts/%s", static::BASE_URL, $post->getRouteKey()), $route);
-
+        $this->assertEquals(sprintf('%s/posts/%s', static::BASE_URL, $post->getRouteKey()), $route);
     }
 
     protected function getRouter()
@@ -35,7 +34,7 @@ class RoutableTest extends TestCase {
             return $router;
         });
 
-        $container->singleton(\Illuminate\Contracts\Routing\UrlGenerator::class, function() use ($router){
+        $container->singleton(\Illuminate\Contracts\Routing\UrlGenerator::class, function () use ($router) {
             return new UrlGenerator(
                 $router->getRoutes(),
                 Request::create(static::BASE_URL)

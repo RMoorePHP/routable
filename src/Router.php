@@ -2,10 +2,10 @@
 
 namespace RMoore\Routable;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Contracts\Routing\UrlGenerator;
 
-class Router {
+class Router
+{
     protected $model;
     protected $router;
 
@@ -15,12 +15,12 @@ class Router {
         $this->router = $router;
     }
 
-    public function __call(string $method, array $parameters){
+    public function __call(string $method, array $parameters)
+    {
         return $this->router->route(
-            sprintf("%s.%s", $this->model->routeBase(), $method),
+            sprintf('%s.%s', $this->model->routeBase(), $method),
             array_merge([$this->model], $parameters[0] ?? []),
             $parameters[1] ?? true
         );
     }
-
 }
