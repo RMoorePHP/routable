@@ -15,7 +15,8 @@
     "require-dev": {
         "illuminate/events": "^6.0",
         "illuminate/database": "^6.0",
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.0",
+        "php-coveralls/php-coveralls": "^2.2"
     },
     "autoload": {
         "psr-4": {
